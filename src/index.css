@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: #0f1f17;
+  color: #e8e0d0;
+}
+
+@layer utilities {
+  .glass-panel {
+    background: rgba(26, 58, 42, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(201, 169, 106, 0.2);
+  }
+  
+  .glass-panel-light {
+    background: rgba(45, 90, 61, 0.6);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(201, 169, 106, 0.15);
+  }
+  
+  .btn-survey {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply bg-survey-secondary hover:bg-survey-accent hover:text-survey-primary;
+    @apply border border-survey-accent/30 hover:border-survey-accent;
+    @apply hover:shadow-lg hover:shadow-survey-accent/20;
+  }
+  
+  .btn-survey-primary {
+    @apply px-5 py-2.5 rounded-lg font-semibold transition-all duration-200;
+    @apply bg-survey-accent text-survey-primary hover:bg-amber-400;
+    @apply shadow-lg shadow-survey-accent/30 hover:shadow-survey-accent/50;
+    @apply hover:-translate-y-0.5;
+  }
+  
+  .btn-survey-danger {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+    @apply bg-survey-error/20 hover:bg-survey-error text-survey-error hover:text-white;
+    @apply border border-survey-error/50;
+  }
+  
+  .text-gradient-gold {
+    background: linear-gradient(135deg, #c9a96a 0%, #e8d4a0 50%, #c9a96a 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .card-glow {
+    box-shadow: 0 0 0 1px rgba(201, 169, 106, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+  }
+}
